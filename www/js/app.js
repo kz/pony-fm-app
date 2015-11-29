@@ -24,4 +24,7 @@ angular.module('app', ['ionic', 'app.controllers', 'app.routes', 'app.services',
     // Force tabs to be under the header, allowing the footer to contain music controls
     $ionicConfigProvider.tabs.position('top');
     $ionicConfigProvider.navBar.alignTitle('center');
+  })
+  .constant('SERVER', {
+    url: 'https://pony.fm'
   });
