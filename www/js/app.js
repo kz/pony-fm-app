@@ -23,4 +23,5 @@ angular.module('app', ['ionic', 'app.controllers', 'app.routes', 'app.services',
   .config(function ($ionicConfigProvider) {
     // Force tabs to be under the header, allowing the footer to contain music controls
     $ionicConfigProvider.tabs.position('top');
+    $ionicConfigProvider.navBar.alignTitle('center');
   });

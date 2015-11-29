@@ -5,7 +5,7 @@
     .module('app.controllers')
     .controller('LatestController', LatestController);
 
-  LatestController.$inject = [$scope];
+  LatestController.$inject = ['$scope'];
 
   /* @ngInject */
   function LatestController($scope) {

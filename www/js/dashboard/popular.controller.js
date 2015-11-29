@@ -5,7 +5,7 @@
     .module('app.controllers')
     .controller('PopularController', PopularController);
 
-  PopularController.$inject = [$scope];
+  PopularController.$inject = ['$scope'];
 
   /* @ngInject */
   function PopularController($scope) {
