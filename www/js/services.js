@@ -2,8 +2,8 @@ angular.module('app.services', [])
 
   .factory('PFMFactory', ['$http', 'SERVER', function ($http, SERVER) {
     var o = {
-      latest: {},
-      popular: {}
+      latest: [],
+      popular: []
     };
 
     // Retrieve the latest and popular tracks
@@ -12,9 +12,8 @@ angular.module('app.services', [])
         method: 'GET',
         url: SERVER.url + '/api/web/dashboard'
       }).success(function(data){
-        console.log(data);
-        o.latest = o.latest.concat(data.recent_tracks);
-        o.popular = o.latest.concat(data.popular_tracks)
+          o.latest = o.latest.concat(data.recent_tracks);
+          o.popular = o.latest.concat(data.popular_tracks);
       });
     };
 

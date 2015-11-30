@@ -1,10 +1,10 @@
 <ion-view title="PonyFM">
     <ion-content padding="'true'" class="has-header">
         <ion-list>
-            <ion-item menu-close="" class="item-thumbnail-left">
-                <img>
-                <h2>Title</h2>
-                <p>Item</p>
+            <ion-item ng-repeat="track in latestTracks" class="item-thumbnail-left item-text-wrap">
+                <img src="{{ track.covers.thumbnail }}">
+                <h2>{{ track.title }}</h2>
+                <p>{{ track.user.name }}</p>
             </ion-item>
         </ion-list>
     </ion-content>

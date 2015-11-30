@@ -19,6 +19,7 @@
     function getLatestTracks() {
       PFMFactory.getDashboardTracks()
         .then(function(){
+          $scope.latestTracks = PFMFactory.latest;
         });
     }
   }
