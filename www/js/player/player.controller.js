@@ -10,6 +10,11 @@
   /* @ngInject */
   function PlayerController($scope) {
 
+    $rootScope.$on('trackListChanged', function(event, data) {
+
+    });
+
+
 
     ////////////////
 
