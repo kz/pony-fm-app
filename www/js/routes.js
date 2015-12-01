@@ -14,26 +14,36 @@ angular.module('app.routes', [])
         templateUrl: 'templates/tab.html'
       })
 
-      .state('tab.popular', {
-        url: '/popular',
-        views: {
-          'tab-popular': {
-            templateUrl: 'templates/popular.html',
-            controller: 'PopularController'
+        .state('tab.popular', {
+          url: '/popular',
+          views: {
+            'tab-popular': {
+              templateUrl: 'templates/popular.html',
+              controller: 'PopularController'
+            }
           }
-        }
-      })
+        })
 
 
-      .state('tab.latest', {
-        url: '/latest',
-        views: {
-          'tab-latest': {
-            templateUrl: 'templates/latest.html',
-            controller: 'LatestController'
+        .state('tab.latest', {
+          url: '/latest',
+          views: {
+            'tab-latest': {
+              templateUrl: 'templates/latest.html',
+              controller: 'LatestController'
+            }
           }
+        })
+
+    .state('player', {
+      url: '/player',
+      views: {
+        'tab-latest': {
+          templateUrl: 'templates/player.html',
+          controller: 'PlayerController'
         }
-      })
+      }
+    })
 
     ;
 

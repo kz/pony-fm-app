@@ -9,19 +9,22 @@
 
   /* @ngInject */
   function LatestController($scope, PFMFactory) {
-    var vm = this;
-    vm.title = 'LatestController';
 
-    getLatestTracks();
+    if (typeof $scope.tracks === 'undefined') {
+      getLatestTracks();
+    }
 
     ////////////////
 
     function getLatestTracks() {
-      PFMFactory.getDashboardTracks()
-        .then(function(){
-          $scope.latestTracks = PFMFactory.latest;
+      $scope.isLoading = true;
+      PFMFactory.getLatestTracks()
+        .then(function () {
+          $scope.tracks = PFMFactory.latest;
+          $scope.isLoading = false;
         });
     }
+
   }
 
 })();

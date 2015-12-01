@@ -6,14 +6,23 @@ angular.module('app.services', [])
       popular: []
     };
 
-    // Retrieve the latest and popular tracks
-    o.getDashboardTracks = function () {
+    // Retrieve popular tracks
+    o.getPopularTracks = function () {
       return $http({
         method: 'GET',
         url: SERVER.url + '/api/web/dashboard'
-      }).success(function(data){
-          o.latest = o.latest.concat(data.recent_tracks);
-          o.popular = o.latest.concat(data.popular_tracks);
+      }).success(function (data) {
+        o.popular = o.latest.concat(data.popular_tracks);
+      });
+    };
+
+    // Retrieve latest tracks
+    o.getLatestTracks = function () {
+      return $http({
+        method: 'GET',
+        url: SERVER.url + '/api/web/dashboard'
+      }).success(function (data) {
+        o.latest = o.latest.concat(data.recent_tracks);
       });
     };
 
