@@ -8,28 +8,28 @@ angular.module('app.routes', [])
     // Each state's controller can be found in controllers.js
     $stateProvider
 
-      .state('tab', {
-        url: '/tab',
+      .state('dashboard', {
+        url: '/dashboard',
         abstract: true,
-        templateUrl: 'templates/tab.html'
+        templateUrl: 'templates/dashboard/tab.html'
       })
 
-        .state('tab.popular', {
+        .state('dashboard.popular', {
           url: '/popular',
           views: {
             'tab-popular': {
-              templateUrl: 'templates/popular.html',
+              templateUrl: 'templates/dashboard/popular.html',
               controller: 'PopularController'
             }
           }
         })
 
 
-        .state('tab.latest', {
+        .state('dashboard.latest', {
           url: '/latest',
           views: {
             'tab-latest': {
-              templateUrl: 'templates/latest.html',
+              templateUrl: 'templates/dashboard/latest.html',
               controller: 'LatestController'
             }
           }
@@ -39,7 +39,7 @@ angular.module('app.routes', [])
       url: '/player',
       views: {
         'tab-latest': {
-          templateUrl: 'templates/player.html',
+          templateUrl: 'templates/player/player.html',
           controller: 'PlayerController'
         }
       }
@@ -48,6 +48,6 @@ angular.module('app.routes', [])
     ;
 
     // if none of the above states are matched, use this as the fallback
-    $urlRouterProvider.otherwise('/tab/popular');
+    $urlRouterProvider.otherwise('/dashboard/popular');
 
   });
