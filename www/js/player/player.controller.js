@@ -5,16 +5,14 @@
     .module('app.controllers')
     .controller('PlayerController', PlayerController);
 
-  PlayerController.$inject = ['$scope'];
+  PlayerController.$inject = ['$rootScope', '$scope'];
 
   /* @ngInject */
-  function PlayerController($scope) {
+  function PlayerController($rootScope, $scope) {
 
     $rootScope.$on('trackListChanged', function(event, data) {
 
     });
-
-
 
     ////////////////
 
