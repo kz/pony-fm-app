@@ -7,9 +7,16 @@
 <ion-content scroll="false" class="has-header has-footer">
   {{ player.currentTrack.title }}
   <small>{{ player.currentTrack.user.name }}</small>
-  <img ng-src="{{ player.currentTrack.covers.normal }}" />
 
-  <p>Controls</p>
+
+  <div class="row row-center">
+    <div class="col col-10"></div>
+    <div class="col col-80">
+      <img ng-src="{{ player.currentTrack.covers.normal }}" width="100%" />
+    </div>
+    <div class="col col-10"></div>
+  </div>
+
 </ion-content>
 
 <div class="bar bar-footer">
