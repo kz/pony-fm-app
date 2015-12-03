@@ -3,7 +3,7 @@
     <ion-spinner ng-show="isLoading"></ion-spinner>
     <ion-list>
       <ion-item ng-click="playTrack(track)" ng-repeat="track in tracks" class="item-thumbnail-left item-text-wrap">
-        <img src="{{ track.covers.thumbnail }}">
+        <img src="{{ track.covers.small }}">
 
         <h2>{{ track.title }}</h2>
 
