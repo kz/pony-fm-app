@@ -5,19 +5,22 @@
     .module('app.controllers')
     .controller('PlayerController', PlayerController);
 
-  PlayerController.$inject = ['$rootScope', '$scope'];
+  PlayerController.$inject = ['$rootScope', '$scope', '$state'];
 
   /* @ngInject */
-  function PlayerController($rootScope, $scope) {
+  function PlayerController($rootScope, $scope, $state) {
 
     $rootScope.$on('trackChanged', function () {
       $rootScope.player.isInFocus = true;
       $rootScope.player.isActive = true;
 
-      startTrack();
+      //startTrack();
     });
 
+    $scope.openPlayer = openPlayer;
     $scope.shrinkPlayer = shrinkPlayer;
+    $scope.openSource = openSource;
+
     $scope.startTrack = startTrack;
     $scope.resumeTrack = resumeTrack;
     $scope.pauseTrack = pauseTrack;
@@ -26,6 +29,10 @@
     ////////////////
 
     var media = null;
+
+    function openPlayer() {
+      $rootScope.player.isInFocus = true;
+    }
 
     function shrinkPlayer() {
       $rootScope.player.isInFocus = false;
@@ -55,11 +62,23 @@
     }
 
     function onMediaStatusChanged(status) {
-      if (status === Media.MEDIA_RUNNING || status === Media.MEDIA_STARTING) {
-        player.isPlaying = true;
-      } else {
-        player.isPlaying = false;
+      $rootScope.player.isPlaying = !!(status === Media.MEDIA_RUNNING || status === Media.MEDIA_STARTING);
+    }
+
+    function openSource() {
+      switch ($rootScope.player.source) {
+        case 'latest':
+          $state.go('dashboard.latest');
+          break;
+        case 'popular':
+          $state.go('dashboard.popular');
+          break;
+        default:
+          $state.go('dashboard.popular');
+          break;
       }
+
+      shrinkPlayer();
     }
 
   }
