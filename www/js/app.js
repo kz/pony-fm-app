@@ -20,6 +20,13 @@ angular.module('app', ['ionic', 'app.controllers', 'app.routes', 'app.services',
       }
     });
   })
+  .run(function ($rootScope) {
+    $rootScope.player = {
+      source: null,
+      currentTrack: null,
+      tracks: {}
+    }
+  })
   .config(function ($ionicConfigProvider) {
     // Force tabs to be under the header, allowing the footer to contain music controls
     $ionicConfigProvider.tabs.position('top');

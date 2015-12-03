@@ -5,14 +5,16 @@
     .module('app.controllers')
     .controller('LatestController', LatestController);
 
-  LatestController.$inject = ['$scope', 'PFMFactory'];
+  LatestController.$inject = ['$rootScope', '$scope', 'PFMFactory'];
 
   /* @ngInject */
-  function LatestController($scope, PFMFactory) {
+  function LatestController($rootScope, $scope, PFMFactory) {
 
     if (typeof $scope.tracks === 'undefined') {
       getLatestTracks();
     }
+
+    $scope.playTrack = playTrack;
 
     ////////////////
 
@@ -23,6 +25,14 @@
           $scope.tracks = PFMFactory.latest;
           $scope.isLoading = false;
         });
+    }
+
+    function playTrack(trackId) {
+      $rootScope.player.source = 'latest';
+      $rootScope.player.currentTrack = $scope.tracks[trackId];
+      $rootScope.player.tracks = $scope.tracks;
+
+      $rootScope.$emit('trackChanged');
     }
 
   }

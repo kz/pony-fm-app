@@ -5,14 +5,16 @@
     .module('app.controllers')
     .controller('PopularController', PopularController);
 
-  PopularController.$inject = ['$scope', 'PFMFactory'];
+  PopularController.$inject = ['$rootScope', '$scope', 'PFMFactory'];
 
   /* @ngInject */
-  function PopularController($scope, PFMFactory) {
+  function PopularController($rootScope, $scope, PFMFactory) {
 
     if (typeof $scope.tracks === 'undefined') {
       getPopularTracks();
     }
+
+    $scope.playTrack = playTrack;
 
     ////////////////
 
@@ -23,6 +25,14 @@
           $scope.tracks = PFMFactory.popular;
           $scope.isLoading = false;
         });
+    }
+
+    function playTrack(trackId) {
+      $rootScope.player.source = 'popular';
+      $rootScope.player.currentTrack = $scope.tracks[trackId];
+      $rootScope.player.tracks = $scope.tracks;
+
+      $rootScope.$emit('trackChanged');
     }
 
   }
