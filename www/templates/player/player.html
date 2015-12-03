@@ -27,7 +27,7 @@
 <div class="bar bar-footer">
   <div class="button-bar">
     <a class="button button-icon icon ion-skip-backward"></a>
-    <a class="button button-icon icon ion-play"></a>
+    <a class="button button-icon icon" ng-class="player.isPlaying ? 'ion-pause' : 'ion-play'"></a>
     <a class="button button-icon icon ion-skip-forward"></a>
   </div>
 </div>

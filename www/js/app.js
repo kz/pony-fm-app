@@ -24,6 +24,7 @@ angular.module('app', ['ionic', 'app.controllers', 'app.routes', 'app.services',
     $rootScope.player = {
       isActive: false,
       isInFocus: false,
+      isPlaying: false,
       source: null,
       currentTrack: null,
       tracks: null
