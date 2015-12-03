@@ -1,5 +1,7 @@
 <div class="bar bar-header bar-light">
-  <h1 class="title item-text-wrap">Now Playing</h1>
+  <button class="button button-icon icon ion-ios-arrow-down" ng-click="closePlayer()"></button>
+  <h1 class="title">Now Playing</h1>
+  <button class="button button-icon icon ion-ios-albums-outline"></button>
 </div>
 
 <ion-content scroll="false" class="has-header has-footer">
@@ -11,7 +13,9 @@
 </ion-content>
 
 <div class="bar bar-footer">
-  <button class="button button-clear">Left</button>
-  <div class="title">Title</div>
-  <button class="button button-clear">Right</button>
+  <div class="button-bar">
+    <a class="button button-icon icon ion-skip-backward"></a>
+    <a class="button button-icon icon ion-play"></a>
+    <a class="button button-icon icon ion-skip-forward"></a>
+  </div>
 </div>

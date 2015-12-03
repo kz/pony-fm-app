@@ -14,8 +14,13 @@
         $rootScope.player.isActive = true;
     });
 
+    $scope.closePlayer = closePlayer;
+
     ////////////////
 
+    function closePlayer() {
+      $rootScope.player.isActive = false;
+    }
 
   }
 
