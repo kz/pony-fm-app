@@ -1,10 +1,11 @@
 <div class="bar bar-header bar-light">
-  <h1 class="title">{{ player.current.title }}</h1>
+  <h1 class="title item-text-wrap">Now Playing</h1>
 </div>
 
 <ion-content scroll="false" class="has-header has-footer">
-  <small>{{ player.current.user.name }}</small>
-  <p><img src="{{ player.current.cover.normal }}" /></p>
+  {{ player.currentTrack.title }}
+  <small>{{ player.currentTrack.user.name }}</small>
+  <img ng-src="{{ player.currentTrack.covers.normal }}" />
 
   <p>Controls</p>
 </ion-content>

@@ -27,9 +27,9 @@
         });
     }
 
-    function playTrack(trackId) {
+    function playTrack(currentTrack) {
       $rootScope.player.source = 'latest';
-      $rootScope.player.currentTrack = $scope.tracks[trackId];
+      $rootScope.player.currentTrack = currentTrack;
       $rootScope.player.tracks = $scope.tracks;
 
       $rootScope.$emit('trackChanged');

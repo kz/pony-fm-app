@@ -25,7 +25,7 @@ angular.module('app', ['ionic', 'app.controllers', 'app.routes', 'app.services',
       isActive: false,
       source: null,
       currentTrack: null,
-      tracks: {}
+      tracks: null
     }
   })
   .config(function ($ionicConfigProvider) {

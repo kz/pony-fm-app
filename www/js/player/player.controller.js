@@ -10,8 +10,8 @@
   /* @ngInject */
   function PlayerController($rootScope, $scope) {
 
-    $rootScope.$on('trackChanged', function(event, data) {
-      $rootScope.player.isActive = true;
+    $rootScope.$on('trackChanged', function() {
+        $rootScope.player.isActive = true;
     });
 
     ////////////////

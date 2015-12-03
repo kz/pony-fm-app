@@ -39,12 +39,12 @@
   <ion-nav-view></ion-nav-view>
 </div>
 
-<div ng-show="player.isActive" ng-controller="PlayerController as player">
+<div ng-show="player.isActive" ng-controller="PlayerController as vm">
   <div ng-include src="'templates/player/player.html'"></div>
 
-  <div class="bar bar-footer">
-    <div ng-include src="'templates/player/footer-player.html'"></div>
-  </div>
+  <!--<div class="bar bar-footer">-->
+    <!--<div ng-include src="'templates/player/footer-player.html'"></div>-->
+  <!--</div>-->
 </div>
 
 <script src="js/dashboard/latest.controller.js"></script>
