@@ -30,7 +30,7 @@
 </head>
 <body ng-app="app" animation="slide-left-right-ios7">
 
-<div ng-hide="player.isActive">
+<div ng-hide="player.isInFocus">
   <ion-nav-bar class="bar-light">
     <ion-nav-back-button>
     </ion-nav-back-button>
@@ -40,11 +40,11 @@
 </div>
 
 <div ng-show="player.isActive" ng-controller="PlayerController as vm">
-  <div ng-include src="'templates/player/player.html'"></div>
+  <div ng-show="player.isInFocus" ng-include src="'templates/player/player.html'"></div>
 
-  <!--<div class="bar bar-footer">-->
-    <!--<div ng-include src="'templates/player/footer-player.html'"></div>-->
-  <!--</div>-->
+  <div ng-hide="player.isInFocus" class="bar bar-footer">
+    <div ng-include src="'templates/player/footer-player.html'"></div>
+  </div>
 </div>
 
 <script src="js/dashboard/latest.controller.js"></script>

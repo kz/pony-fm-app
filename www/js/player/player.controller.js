@@ -10,16 +10,17 @@
   /* @ngInject */
   function PlayerController($rootScope, $scope) {
 
-    $rootScope.$on('trackChanged', function() {
-        $rootScope.player.isActive = true;
+    $rootScope.$on('trackChanged', function () {
+      $rootScope.player.isInFocus = true;
+      $rootScope.player.isActive = true;
     });
 
-    $scope.closePlayer = closePlayer;
+    $scope.shrinkPlayer = shrinkPlayer;
 
     ////////////////
 
-    function closePlayer() {
-      $rootScope.player.isActive = false;
+    function shrinkPlayer() {
+      $rootScope.player.isInFocus = false;
     }
 
   }

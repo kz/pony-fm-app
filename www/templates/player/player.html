@@ -1,20 +1,25 @@
 <div class="bar bar-header bar-light">
-  <button class="button button-icon icon ion-ios-arrow-down" ng-click="closePlayer()"></button>
+  <button class="button button-icon icon ion-ios-arrow-down" ng-click="shrinkPlayer()"></button>
   <h1 class="title">Now Playing</h1>
   <button class="button button-icon icon ion-ios-albums-outline"></button>
 </div>
 
 <ion-content scroll="false" class="has-header has-footer">
-  {{ player.currentTrack.title }}
-  <small>{{ player.currentTrack.user.name }}</small>
-
 
   <div class="row row-center">
     <div class="col col-10"></div>
     <div class="col col-80">
-      <img ng-src="{{ player.currentTrack.covers.normal }}" width="100%" />
+      <img ng-src="{{ player.currentTrack.covers.normal }}" width="100%"/>
     </div>
     <div class="col col-10"></div>
+  </div>
+
+  <div class="card">
+    <div class="item item-text-wrap">
+      <h1>{{ player.currentTrack.title }}</h1>
+
+      <h3>{{ player.currentTrack.user.name }}</h3>
+    </div>
   </div>
 
 </ion-content>
