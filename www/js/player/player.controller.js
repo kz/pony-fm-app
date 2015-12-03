@@ -14,7 +14,7 @@
       $rootScope.player.isInFocus = true;
       $rootScope.player.isActive = true;
 
-      //startTrack();
+      startTrack();
     });
 
     $scope.openPlayer = openPlayer;

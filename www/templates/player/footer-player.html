@@ -1,6 +1,7 @@
-<div class="bar bar-footer" ng-click="openPlayer()">
+<div class="bar bar-footer">
   <div class="button-bar">
-    <a class="button button-icon icon" ng-class="player.isPlaying ? 'ion-pause' : 'ion-play'"></a>
-    <a class="button button-icon icon">{{ player.currentTrack.title }}</a>
+    <a class="button button-icon icon ion-pause" ng-if="player.isPlaying" ng-click="pauseTrack()"></a>
+    <a class="button button-icon icon ion-play" ng-if="!player.isPlaying" ng-click="resumeTrack()"></a>
+    <a class="button button-icon icon" ng-click="openPlayer()">{{ player.currentTrack.title }}</a>
   </div>
 </div>
