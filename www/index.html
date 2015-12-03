@@ -30,19 +30,22 @@
 </head>
 <body ng-app="app" animation="slide-left-right-ios7">
 
-<ion-nav-bar class="bar-light">
-  <ion-nav-back-button>
-  </ion-nav-back-button>
-</ion-nav-bar>
+<div ng-hide="player.isActive">
+  <ion-nav-bar class="bar-light">
+    <ion-nav-back-button>
+    </ion-nav-back-button>
+  </ion-nav-bar>
 
-<ion-nav-view></ion-nav-view>
+  <ion-nav-view></ion-nav-view>
+</div>
 
-<!--<div ng-include src="'templates/player/player.html'"></div>-->
+<div ng-show="player.isActive" ng-controller="PlayerController as player">
+  <div ng-include src="'templates/player/player.html'"></div>
 
-<!--<div class="bar bar-footer">-->
-  <!--<div ng-include src="'templates/player/footer-player.html'"></div>-->
-<!--</div>-->
-
+  <div class="bar bar-footer">
+    <div ng-include src="'templates/player/footer-player.html'"></div>
+  </div>
+</div>
 
 <script src="js/dashboard/latest.controller.js"></script>
 <script src="js/dashboard/popular.controller.js"></script>
