@@ -8,7 +8,7 @@
   PlayerController.$inject = ['$rootScope', '$scope', '$state'];
 
   /* @ngInject */
-  function PlayerController($rootScope, $scope, $state) {
+  function PlayerController($rootScope, $scope, $state, $cordovaMedia) {
 
     $rootScope.$on('trackChanged', function () {
       $rootScope.player.isInFocus = true;
@@ -44,7 +44,7 @@
         media.release();
       }
 
-      media = new Media(player.currentTrack.streams.mp3, null, null, onMediaStatusChanged);
+      media = new $cordovaMedia.newMedia(player.currentTrack.streams.mp3, null, null, onMediaStatusChanged);
       media.play();
     }
 
